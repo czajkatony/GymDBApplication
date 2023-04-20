@@ -1,7 +1,5 @@
 -- Gym SQL --
---To do--
-
----------
+-- To do--
 
 -- ========== Gym Table ==========
 
@@ -41,8 +39,7 @@ CREATE TABLE IF NOT EXISTS Employee(
     Phone varchar(20) DEFAULT NULL,
     IsTrainer BOOLEAN DEFAULT FALSE,
     CertificationID INT UNIQUE DEFAULT NULL,
-    PRIMARY KEY (EmployeeID),
-    KEY SSN (SSN)
+    PRIMARY KEY (EmployeeID)
 );
 -- Employee Data
 INSERT INTO Employee (EmployeeID, SSN, Password, FirstName, LastName, Phone, IsTrainer, CertificationID) VALUES
