@@ -30,6 +30,12 @@ h1 {
   margin-bottom: 20px;
 }
 
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: red;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -50,7 +56,7 @@ input[type="password"] {
   background-color: var(--eggshell);
 }
 
-button {
+input[type="submit"] {
   padding: 10px;
   font-size: 16px;
   background-color: var(--red);
@@ -61,7 +67,7 @@ button {
   transition: all 0.3s ease;
 }
 
-button:hover {
+input[type="submit"]:hover {
   background-color: var(--darkred); 
 }
 
