@@ -13,21 +13,19 @@ body {
   background-color: var(--eggshell);
 }
 
-.login-container {
-  margin: auto;
-  width: 50%;
-  max-width: 500px;
-  padding: 20px;
-  background-color: var(--gray);
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px #ccc;
-  color: var(--eggshell);
-}
+/* .login-container { */
+/*   margin: auto; */
+/*   width: 50%; */
+/*   max-width: 500px; */
+/*   padding: 20px; */
+/*   background-color: var(--gray); */
+/*   border: 1px solid #ccc; */
+/*   border-radius: 5px; */
+/*   box-shadow: 0px 0px 10px #ccc; */
+/*   color: var(--eggshell); */
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
 }
 
 h2 {
@@ -43,17 +41,31 @@ form {
 
 label {
   font-size: 16px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 input[type="text"],
 input[type="password"] {
-  padding: 10px;
+  /* padding: 10px; */
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  margin-bottom: 20px;
-  background-color: var(--eggshell);
+  width: 100%;
+  color: var(--gray);
+  /* margin-bottom: 20px; */
+}
+button{
+padding: 10px;
+  font-size: 16px;
+  background-color: var(--red);
+  color: var(--eggshell);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover{
+    background-color: var(--darkred);
 }
 
 input[type="submit"] {
@@ -71,6 +83,25 @@ input[type="submit"]:hover {
   background-color: var(--darkred); 
 }
 
+.topSection{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.inner{
+    display: inline-block;
+    width: 20vw;
+    padding: 2em;
+}
+.middle{
+    display: inline-block;
+    width: 40vw;
+}
+.rightSection{
+    display: inline-block;
+    width: 60vw;
+}
+
 header {
   display: flex;
   position: fixed;
@@ -78,10 +109,11 @@ header {
   left: 0;
   width: 100%;
   color: var(--eggshell);
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: var(--gray);
   padding-left: 2rem;
+  padding-right: 2rem;
   border-radius: 0.5;
 }
 
@@ -138,5 +170,32 @@ main {
   cursor: pointer;
   text-decoration: none;
 }
+
+.home{
+    padding-left: 2em;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: var(--gray);
+  color: var(--eggshell);
+}
+
+tbody tr:hover {
+  background-color: var(--gray);
+  color: var(--eggshell);
+}
+
 
 

@@ -23,28 +23,6 @@ session_start();
     die("Connection failed: " . mysqli_connect_error());
   }
   ?>
-
-  <?php
-  // button 2 query
-  if (isset($_POST['button2'])) {
-    $sql = "SELECT * FROM table2";
-    $result = mysqli_query($conn, $sql);
-    // process query result
-  }
-  ?>
-  
-
-  <?php
-  // button 3 query
-  if (isset($_POST['button3'])) {
-    $sql = "SELECT * FROM table3";
-    $result = mysqli_query($conn, $sql);
-    // process query result
-  }
-  ?>
-
-
-
 <!DOCTYPE html>
 <html lang = "en">
    <head>
@@ -57,41 +35,13 @@ session_start();
 </header>
    <body>
     <main>
-        <h1>Members </h1> 
-        <form method="post">
-        <button type="submit" name="button1">View/Add Members</button>
-        <?php
-    
-  // button 1 query
-  if (isset($_POST['button1'])) {
-    $sql = "SELECT * FROM Member";
-    $result = mysqli_query($conn, $sql);
-    if (mysqli_num_rows($result) > 0) {
-        echo "<table>";
-        echo "<tr><th>Member ID</th><th>First Name</th><th>Last Name</th><th>Phone Number</th></tr>";
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr><td>" . $row["MemberID"] . "</td><td>" . $row["FirstName"] . "</td><td>" . $row["LastName"] . "</td><td>" . $row["Phone"] . "</td></tr>";
-        }
-        echo "</table>";
-    } else {
-        echo "No results found.";
-    }
-    // process query result
-  }
-  ?>
-        <h1>Employees</h1> 
-        <form method="post">
-        <button type="submit" name="button2">View/Add Employees</button>
-        <h1>Training Programs</h1> 
-        <form method="post">
-        <button type="submit" name="button3">View/Add Training Programs</button>
-        <h1>Equipment</h1> 
-        <form method="post">
-        <button type="submit" name="button4">View/Add Equipment</button>
-        <h1>Locations</h1> 
-        <form method="post">
-        <button type="submit" name="button5">View/Add Locations</button>
-  </form>
+    <div class="button-container">
+      <a href="members.php"><button class="button">Members</button></a>
+      <a href="employees.php"><button class="button">Employees</button></a>
+      <a href="training-programs.php"><button class="button">Training Programs</button></a>
+      <a href="equipment.php"><button class="button">Equipment</button></a>
+      <a href="locations."><button class="button">Locations</button></a>
+    </div>
     </main>
    </body>
 </html>
