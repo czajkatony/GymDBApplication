@@ -74,23 +74,6 @@ session_start();
         </div>
         <div class="middle">
            <?php
-          // // changes start here
-          // // button 1 query
-          // // if (isset($_POST['button1'])) {
-          //   $sql = "SELECT * FROM Member";
-          //   $result = mysqli_query($conn, $sql);
-          //   if (mysqli_num_rows($result) > 0) {
-          //       echo "<table>";
-          //       echo "<tr><th>Member ID</th><th>First Name</th><th>Last Name</th><th>Phone Number</th></tr>";
-          //       while ($row = mysqli_fetch_assoc($result)) {
-          //           echo "<tr><td>" . $row["MemberID"] . "</td><td>" . $row["FirstName"] . "</td><td>" . $row["LastName"] . "</td><td>" . $row["Phone"] . "</td></tr>";
-          //       }
-          //       echo "</table>";
-          //   } else {
-          //       echo "No results found.";
-          //   }
-          //   // process query result
-          // // }
           if (isset($_POST['addMember'])) {
             $memID = $_POST['MemberID'];
             $fn = $_POST['FirstName'];
@@ -113,19 +96,6 @@ session_start();
             $result0 = mysqli_query($conn, $sql0);
             $result1 = mysqli_query($conn, $sql1);
 
-            // $sql = "SELECT * FROM Member";
-            // $result = mysqli_query($conn, $sql);
-            // if (mysqli_num_rows($result) > 0) {
-            //     echo "<table>";
-            //     echo "<tr><th>Member ID</th><th>First Name</th><th>Last Name</th><th>Phone Number</th></tr>";
-            //     while ($row = mysqli_fetch_assoc($result)) {
-            //         echo "<tr><td>" . $row["MemberID"] . "</td><td>" . $row["FirstName"] . "</td><td>" . $row["LastName"] . "</td><td>" . $row["Phone"] . "</td></tr>";
-            //     }
-            //     echo "</table>";
-            // } else {
-            //     echo "No results found.";
-            // }
-            // // process query result
             include 'member_table.php';
           }
 
@@ -136,56 +106,12 @@ session_start();
             mysqli_stmt_bind_param($deleteStmt, 's', $deleteID);
             mysqli_execute($deleteStmt);
 
-            // $sql = "SELECT * FROM Member"; 
-            // $result = mysqli_query($conn, $sql);
-            // if (mysqli_num_rows($result) > 0) {
-            //     echo "<table>";
-            //     echo "<tr><th>Member ID</th><th>First Name</th><th>Last Name</th><th>Phone Number</th></tr>";
-            //     while ($row = mysqli_fetch_assoc($result)) {
-            //         echo "<tr><td>" . $row["MemberID"] . "</td><td>" . $row["FirstName"] . "</td><td>" . $row["LastName"] . "</td><td>" . $row["Phone"] . "</td></tr>";
-            //     }
-            //     echo "</table>";
-            // } else {
-            //     echo "No results found.";
-            // }
-            // // process query result
             include 'member_table.php';
           }
 
             else if (isset($_POST['search'])) {
-            $memID = $_POST['MemberID'];
-            $fn = $_POST['FirstName'];
-            $ln = $_POST['LastName'];
-            $phone = $_POST['Phone'];
-            $tier = $_POST['tier'];
+                include 'member_search.php';
 
-            $sql0 = "INSERT INTO Member (MemberID, FirstName, LastName, Phone) VALUES (?,?, ?, ?)";
-            $sql1 = "INSERT INTO Membership (Address, MemberID, Tier) VALUES ('123 Main St', ?, ?)";
-
-            $stmt0 = mysqli_prepare($conn, $sql0);
-            $stmt1 = mysqli_prepare($conn, $sql1);
-
-            mysqli_stmt_bind_param($stmt0,'ssss', $memID, $fn, $ln, $phone);
-            mysqli_stmt_bind_param($stmt1,'ss', $memID, $tier);
-
-            mysqli_execute($stmt0);
-            mysqli_execute($stmt1);
-
-            $sql = "SELECT * FROM Member";
-            $result0 = mysqli_query($conn, $sql0);
-            $result1 = mysqli_query($conn, $sql1);
-            $result = mysqli_query($conn, $sql);
-            if (mysqli_num_rows($result) > 0) {
-                echo "<table>";
-                echo "<tr><th>Member ID</th><th>First Name</th><th>Last Name</th><th>Phone Number</th></tr>";
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr><td>" . $row["MemberID"] . "</td><td>" . $row["FirstName"] . "</td><td>" . $row["LastName"] . "</td><td>" . $row["Phone"] . "</td></tr>";
-                }
-                echo "</table>";
-            } else {
-                echo "No results found.";
-            }
-            // process query result
           }
           else{
             include 'member_table.php'; 

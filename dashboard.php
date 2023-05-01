@@ -39,8 +39,6 @@ session_start();
       <a href="members.php"><button class="button">Members</button></a>
       <a href="employees.php"><button class="button">Employees</button></a>
       <a href="training-programs.php"><button class="button">Training Programs</button></a>
-      <a href="equipment.php"><button class="button">Equipment</button></a>
-      <a href="locations."><button class="button">Locations</button></a>
     </div>
     </main>
    </body>
